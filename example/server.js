@@ -1,8 +1,8 @@
 'use strict';
 // 配置 API Key 和 App ID
 // 从 Ping++ 管理平台应用信息里获取
-var API_KEY = "sk_test_ibbTe5jLGCi5rzfH4OqPW9KC" // 这里填入你的 Test/Live Key
-var APP_ID = "app_1Gqj58ynP0mHeX1q" // 这里填入你的应用 ID
+var API_KEY = "sk_test_fLijnLbbfrTSzT0af9KevXfT" // 这里填入你的 Test/Live Key
+var APP_ID = "app_iDO0W9W98ez9OGqL" // 这里填入你的应用 ID
 
 var http = require('http');
 var url = require('url');
@@ -62,7 +62,7 @@ http.createServer(function (req, res) {
   pingpp.parseHeaders(req.headers); // 把从客户端传上来的 Headers 传到这里
 
   // 设置你的私钥路径，用于请求的签名，对应的公钥请填写到 Ping++ 管理平台
-  pingpp.setPrivateKeyPath(__dirname + "/your_rsa_private_key.pem");
+  pingpp.setPrivateKeyPath(__dirname + "/rsa_private_key.pem");
 
   req.setEncoding('utf-8');
   var post_data = "";
